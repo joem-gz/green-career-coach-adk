@@ -9,7 +9,8 @@ dependencies = [
     "google-adk~=1.4.2",
     "opentelemetry-exporter-gcp-trace~=1.9.0",
     "google-cloud-logging~=3.11.4",
-    "google-cloud-aiplatform[evaluation,agent-engines]~=1.95.1"
+    "google-cloud-aiplatform[evaluation,agent-engines]~=1.95.1",
+    "pydantic>=2.11.7",
 ]
 
 requires-python = ">=3.10,<3.13"
