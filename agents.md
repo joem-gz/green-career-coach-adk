@@ -1,18 +1,8 @@
-You’re right—stuffing prompt recipes into `agents.md` bloats the context window for Codex (and humans). Better pattern:
-
-* Keep `agents.md` **tiny**: purpose, architecture sketch, contracts, DoD.
-* Put prompt recipes in a separate doc you only paste when needed (e.g. `/docs/prompts.md`), or as GitHub Issue templates that devs invoke on demand.
-* Use `CONTRIBUTING.md` for repo conventions (lint, tests, CI), not prompts.
-
-Here’s a **lean `agents.md`** you can use:
-
----
-
 # agents.md v1
 
 ## Purpose
 
-Backend ADK agent service for Green Skills Coach in a **hybrid Dialogflow CX ↔ ADK** setup. CX routes; ADK does tool-using reasoning.
+Backend ADK agent service for Green Skills Coach in a **hybrid Dialogflow CX ↔ ADK** setup. CX routes and handles UI; ADK does tool-using reasoning.
 
 ## Runtime & region
 

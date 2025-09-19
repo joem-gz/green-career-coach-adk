@@ -1,3 +1,4 @@
+# [AI-GEN] Generated with ChatGPT5-Codex (Sep 2025). Reviewed/adapted by @joem-gz
 """Tests for Pydantic domain models and schema generation utilities."""
 
 from __future__ import annotations

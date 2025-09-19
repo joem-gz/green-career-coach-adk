@@ -1,3 +1,4 @@
+# [AI-GEN] Generated with ChatGPT5-Codex (Sep 2025). Reviewed/adapted by @joem-gz
 """Domain models for career search entities."""
 
 from __future__ import annotations

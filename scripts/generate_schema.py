@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# [AI-GEN] Generated with ChatGPT5-Codex (Sep 2025). Reviewed/adapted by @joem-gz
 """Generate a combined JSON Schema document for the project's domain models."""
 
 from __future__ import annotations
