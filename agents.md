@@ -36,3 +36,10 @@ JSON logs (request\_id, route, latency\_ms, tool\_name, error); metrics (reqs, e
 ## Definition of Done
 
 Contracts unchanged (or versioned), tests added/updated, CI green, docs updated.
+
+### AI-Assisted Code
+- When code is generated with AI (e.g. ChatGPT5-Codex), add a provenance marker:
+  ```python
+  # [AI-GEN] Generated with ChatGPT5-Codex (MMM YYYY). Reviewed/adapted by @joem-gz
+  """Short description of the module/class/function purpose."""
+
