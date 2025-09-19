@@ -1,0 +1,890 @@
+{
+  "ApprenticeshipPosting": {
+    "additionalProperties": false,
+    "description": "Extends a job posting with apprenticeship specific metadata.",
+    "properties": {
+      "description": {
+        "default": "",
+        "description": "Full job description including responsibilities and qualifications.",
+        "title": "Description",
+        "type": "string"
+      },
+      "employer": {
+        "description": "Name of the hiring organization.",
+        "title": "Employer",
+        "type": "string"
+      },
+      "id": {
+        "description": "Unique identifier for the job posting.",
+        "title": "Id",
+        "type": "string"
+      },
+      "level": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Apprenticeship level as defined by the awarding body.",
+        "title": "Level"
+      },
+      "location": {
+        "description": "Primary location of the job opportunity.",
+        "title": "Location",
+        "type": "string"
+      },
+      "posted_at": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Timestamp indicating when the job was posted.",
+        "title": "Posted At"
+      },
+      "provider": {
+        "description": "Training provider delivering the apprenticeship program.",
+        "title": "Provider",
+        "type": "string"
+      },
+      "salary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Salary or compensation description when available.",
+        "title": "Salary"
+      },
+      "skills": {
+        "description": "Key skills or keywords associated with the job posting.",
+        "items": {
+          "type": "string"
+        },
+        "title": "Skills",
+        "type": "array"
+      },
+      "source": {
+        "description": "Identifier for the system or board providing the job.",
+        "title": "Source",
+        "type": "string"
+      },
+      "standard_code": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Standard code identifying the apprenticeship framework.",
+        "title": "Standard Code"
+      },
+      "title": {
+        "description": "Job title or role name.",
+        "title": "Title",
+        "type": "string"
+      },
+      "url": {
+        "description": "Canonical URL to the job posting detail page.",
+        "format": "uri",
+        "maxLength": 2083,
+        "minLength": 1,
+        "title": "Url",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "employer",
+      "location",
+      "url",
+      "source",
+      "provider"
+    ],
+    "title": "ApprenticeshipPosting",
+    "type": "object"
+  },
+  "Course": {
+    "additionalProperties": false,
+    "description": "Describes an educational course relevant to career development.",
+    "properties": {
+      "duration": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Duration or time commitment summary for the course.",
+        "title": "Duration"
+      },
+      "id": {
+        "description": "Unique identifier for the course.",
+        "title": "Id",
+        "type": "string"
+      },
+      "location": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Location where the course is offered, if applicable.",
+        "title": "Location"
+      },
+      "mode": {
+        "default": "in-person",
+        "description": "Delivery mode such as in-person, online, or hybrid.",
+        "title": "Mode",
+        "type": "string"
+      },
+      "provider": {
+        "description": "Organization delivering the course.",
+        "title": "Provider",
+        "type": "string"
+      },
+      "start_date": {
+        "anyOf": [
+          {
+            "format": "date",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Start date for the next available course cohort when known.",
+        "title": "Start Date"
+      },
+      "title": {
+        "description": "Official course title.",
+        "title": "Title",
+        "type": "string"
+      },
+      "url": {
+        "description": "URL with detailed course information and enrollment instructions.",
+        "format": "uri",
+        "maxLength": 2083,
+        "minLength": 1,
+        "title": "Url",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "provider",
+      "url"
+    ],
+    "title": "Course",
+    "type": "object"
+  },
+  "JobPosting": {
+    "additionalProperties": false,
+    "description": "Represents a single job posting sourced from an external provider.",
+    "properties": {
+      "description": {
+        "default": "",
+        "description": "Full job description including responsibilities and qualifications.",
+        "title": "Description",
+        "type": "string"
+      },
+      "employer": {
+        "description": "Name of the hiring organization.",
+        "title": "Employer",
+        "type": "string"
+      },
+      "id": {
+        "description": "Unique identifier for the job posting.",
+        "title": "Id",
+        "type": "string"
+      },
+      "location": {
+        "description": "Primary location of the job opportunity.",
+        "title": "Location",
+        "type": "string"
+      },
+      "posted_at": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Timestamp indicating when the job was posted.",
+        "title": "Posted At"
+      },
+      "salary": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Salary or compensation description when available.",
+        "title": "Salary"
+      },
+      "skills": {
+        "description": "Key skills or keywords associated with the job posting.",
+        "items": {
+          "type": "string"
+        },
+        "title": "Skills",
+        "type": "array"
+      },
+      "source": {
+        "description": "Identifier for the system or board providing the job.",
+        "title": "Source",
+        "type": "string"
+      },
+      "title": {
+        "description": "Job title or role name.",
+        "title": "Title",
+        "type": "string"
+      },
+      "url": {
+        "description": "Canonical URL to the job posting detail page.",
+        "format": "uri",
+        "maxLength": 2083,
+        "minLength": 1,
+        "title": "Url",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "employer",
+      "location",
+      "url",
+      "source"
+    ],
+    "title": "JobPosting",
+    "type": "object"
+  },
+  "SearchRequest": {
+    "$defs": {
+      "SearchFilters": {
+        "additionalProperties": false,
+        "description": "Filters that can be applied to a search request.",
+        "properties": {
+          "contract": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Preferred contract type such as permanent, temporary, or apprenticeship.",
+            "title": "Contract"
+          },
+          "keywords": {
+            "description": "Additional free-form keywords to refine the search results.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Keywords",
+            "type": "array"
+          },
+          "level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Desired seniority, qualification, or apprenticeship level filter.",
+            "title": "Level"
+          },
+          "radius": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Search radius in kilometers from the target location.",
+            "title": "Radius"
+          }
+        },
+        "title": "SearchFilters",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "description": "Represents a structured request for discovering opportunities.",
+    "properties": {
+      "filters": {
+        "$ref": "#/$defs/SearchFilters",
+        "description": "Optional filters applied to shape the search results."
+      },
+      "location": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Location string to anchor the search, such as a city or postal code.",
+        "title": "Location"
+      },
+      "query": {
+        "description": "Primary free-text query for the search.",
+        "title": "Query",
+        "type": "string"
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "title": "SearchRequest",
+    "type": "object"
+  },
+  "SearchResponse[ApprenticeshipPosting]": {
+    "$defs": {
+      "ApprenticeshipPosting": {
+        "additionalProperties": false,
+        "description": "Extends a job posting with apprenticeship specific metadata.",
+        "properties": {
+          "description": {
+            "default": "",
+            "description": "Full job description including responsibilities and qualifications.",
+            "title": "Description",
+            "type": "string"
+          },
+          "employer": {
+            "description": "Name of the hiring organization.",
+            "title": "Employer",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the job posting.",
+            "title": "Id",
+            "type": "string"
+          },
+          "level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Apprenticeship level as defined by the awarding body.",
+            "title": "Level"
+          },
+          "location": {
+            "description": "Primary location of the job opportunity.",
+            "title": "Location",
+            "type": "string"
+          },
+          "posted_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Timestamp indicating when the job was posted.",
+            "title": "Posted At"
+          },
+          "provider": {
+            "description": "Training provider delivering the apprenticeship program.",
+            "title": "Provider",
+            "type": "string"
+          },
+          "salary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Salary or compensation description when available.",
+            "title": "Salary"
+          },
+          "skills": {
+            "description": "Key skills or keywords associated with the job posting.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Skills",
+            "type": "array"
+          },
+          "source": {
+            "description": "Identifier for the system or board providing the job.",
+            "title": "Source",
+            "type": "string"
+          },
+          "standard_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Standard code identifying the apprenticeship framework.",
+            "title": "Standard Code"
+          },
+          "title": {
+            "description": "Job title or role name.",
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "description": "Canonical URL to the job posting detail page.",
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "employer",
+          "location",
+          "url",
+          "source",
+          "provider"
+        ],
+        "title": "ApprenticeshipPosting",
+        "type": "object"
+      },
+      "SourceBreakdown": {
+        "additionalProperties": false,
+        "description": "Aggregated information about result counts per data source.",
+        "properties": {
+          "count": {
+            "default": 0,
+            "description": "Number of results contributed by the provider.",
+            "minimum": 0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "source": {
+            "description": "Identifier of the upstream data provider.",
+            "title": "Source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "title": "SourceBreakdown",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "debug": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional diagnostic metadata useful for debugging searches.",
+        "title": "Debug"
+      },
+      "items": {
+        "description": "Collection of resources that satisfy the search request.",
+        "items": {
+          "$ref": "#/$defs/ApprenticeshipPosting"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "source_breakdown": {
+        "description": "Breakdown of result counts grouped by source provider.",
+        "items": {
+          "$ref": "#/$defs/SourceBreakdown"
+        },
+        "title": "Source Breakdown",
+        "type": "array"
+      },
+      "total": {
+        "default": 0,
+        "description": "Total number of resources available for the provided query and filters.",
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "title": "SearchResponse[ApprenticeshipPosting]",
+    "type": "object"
+  },
+  "SearchResponse[Course]": {
+    "$defs": {
+      "Course": {
+        "additionalProperties": false,
+        "description": "Describes an educational course relevant to career development.",
+        "properties": {
+          "duration": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Duration or time commitment summary for the course.",
+            "title": "Duration"
+          },
+          "id": {
+            "description": "Unique identifier for the course.",
+            "title": "Id",
+            "type": "string"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Location where the course is offered, if applicable.",
+            "title": "Location"
+          },
+          "mode": {
+            "default": "in-person",
+            "description": "Delivery mode such as in-person, online, or hybrid.",
+            "title": "Mode",
+            "type": "string"
+          },
+          "provider": {
+            "description": "Organization delivering the course.",
+            "title": "Provider",
+            "type": "string"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Start date for the next available course cohort when known.",
+            "title": "Start Date"
+          },
+          "title": {
+            "description": "Official course title.",
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "description": "URL with detailed course information and enrollment instructions.",
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "provider",
+          "url"
+        ],
+        "title": "Course",
+        "type": "object"
+      },
+      "SourceBreakdown": {
+        "additionalProperties": false,
+        "description": "Aggregated information about result counts per data source.",
+        "properties": {
+          "count": {
+            "default": 0,
+            "description": "Number of results contributed by the provider.",
+            "minimum": 0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "source": {
+            "description": "Identifier of the upstream data provider.",
+            "title": "Source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "title": "SourceBreakdown",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "debug": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional diagnostic metadata useful for debugging searches.",
+        "title": "Debug"
+      },
+      "items": {
+        "description": "Collection of resources that satisfy the search request.",
+        "items": {
+          "$ref": "#/$defs/Course"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "source_breakdown": {
+        "description": "Breakdown of result counts grouped by source provider.",
+        "items": {
+          "$ref": "#/$defs/SourceBreakdown"
+        },
+        "title": "Source Breakdown",
+        "type": "array"
+      },
+      "total": {
+        "default": 0,
+        "description": "Total number of resources available for the provided query and filters.",
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "title": "SearchResponse[Course]",
+    "type": "object"
+  },
+  "SearchResponse[JobPosting]": {
+    "$defs": {
+      "JobPosting": {
+        "additionalProperties": false,
+        "description": "Represents a single job posting sourced from an external provider.",
+        "properties": {
+          "description": {
+            "default": "",
+            "description": "Full job description including responsibilities and qualifications.",
+            "title": "Description",
+            "type": "string"
+          },
+          "employer": {
+            "description": "Name of the hiring organization.",
+            "title": "Employer",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the job posting.",
+            "title": "Id",
+            "type": "string"
+          },
+          "location": {
+            "description": "Primary location of the job opportunity.",
+            "title": "Location",
+            "type": "string"
+          },
+          "posted_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Timestamp indicating when the job was posted.",
+            "title": "Posted At"
+          },
+          "salary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Salary or compensation description when available.",
+            "title": "Salary"
+          },
+          "skills": {
+            "description": "Key skills or keywords associated with the job posting.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Skills",
+            "type": "array"
+          },
+          "source": {
+            "description": "Identifier for the system or board providing the job.",
+            "title": "Source",
+            "type": "string"
+          },
+          "title": {
+            "description": "Job title or role name.",
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "description": "Canonical URL to the job posting detail page.",
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "employer",
+          "location",
+          "url",
+          "source"
+        ],
+        "title": "JobPosting",
+        "type": "object"
+      },
+      "SourceBreakdown": {
+        "additionalProperties": false,
+        "description": "Aggregated information about result counts per data source.",
+        "properties": {
+          "count": {
+            "default": 0,
+            "description": "Number of results contributed by the provider.",
+            "minimum": 0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "source": {
+            "description": "Identifier of the upstream data provider.",
+            "title": "Source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "title": "SourceBreakdown",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "debug": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional diagnostic metadata useful for debugging searches.",
+        "title": "Debug"
+      },
+      "items": {
+        "description": "Collection of resources that satisfy the search request.",
+        "items": {
+          "$ref": "#/$defs/JobPosting"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "source_breakdown": {
+        "description": "Breakdown of result counts grouped by source provider.",
+        "items": {
+          "$ref": "#/$defs/SourceBreakdown"
+        },
+        "title": "Source Breakdown",
+        "type": "array"
+      },
+      "total": {
+        "default": 0,
+        "description": "Total number of resources available for the provided query and filters.",
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "title": "SearchResponse[JobPosting]",
+    "type": "object"
+  }
+}
